@@ -85,7 +85,10 @@ os_time_tick(int ticks)
 void
 os_time_advance(int ticks)
 {
-    assert(ticks >= 0);
+    if (ticks <= 0) {
+        return;
+    }
+
 
     if (ticks > 0) {
         if (!os_started()) {
