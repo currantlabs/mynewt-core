@@ -36,7 +36,7 @@ static inline float exp_sin_custom_io(float step, float max_steps, float max_val
     float mplier = max_val / 2.35040238729f;
     float pi_d_maxs = (float)M_PI / max_steps;
     step += max_steps;
-    return ( exp( sinf((step * pi_d_maxs) + (float)M_PI_2)) - ONE_DIV_E ) * mplier;
+    return (float)( expf( sinf((step * pi_d_maxs) + (float)M_PI_2)) - ONE_DIV_E ) * mplier;
 }
 
 static inline float sine_custom_io(float step, float max_steps, float max_val)
