@@ -17,6 +17,10 @@
  * under the License.
  */
 
+#include "os/mynewt.h"
+
+#if MYNEWT_VAL(BATTERY_SHELL)
+
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
@@ -539,3 +543,4 @@ battery_shell_register(void)
     rc = shell_cmd_register(&bat_cli_cmd);
     SYSINIT_PANIC_ASSERT_MSG(rc == 0, "Failed to register battery shell");
 }
+#endif
